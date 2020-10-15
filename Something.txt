@@ -1,0 +1,27 @@
+﻿Có vài cái hỏi ông Lộc
+1. Có cách nào tạo id tự động hoặc id theo 1 số thứ tự không? Chứ tui copy code ông thì ông dùng Guid
+2. Ông có thể chỉnh hoặc giải thích lại cái hàm DoSearchAsync được không? Làm sao để trả về List vậy?
+3. Ông có thể làm thêm các method search theo các thuộc tính trong File.cs, trừ cái id ra
+
+
+Giờ chia ra thế này:
+ông Lộc làm mấy cái DAO nhé, ông có thể return list hoặc bool: tiện cho xử lý forms hơn
+
+ông Tú làm giao diện cho cái Forms2 
+làm chức năng thêm/xóa/sửa
+sắp xếp theo: name/extension/date
+
+tất cả phải phải tương tác với máy thật luôn nhé ví dụ ông thêm 1 file .txt (tạo file bằng winforms) thì thêm cái File đó vào List<File>
+và cập nhật lại trên data Elastic (qua method của ông Lộc)
+
+tìm kiếm theo name/content
+
+Program.cs -> thay Application.Run(new ConsoleForm()); để muốn chạy form cần
+
+nếu ông Tú thấy không đủ sức làm thì nói phần nào chưa làm để tui và ông Lộc có thể phụ
+
+nếu không vướng bận việc gì thì cố gắng tuần sau xong nhé
+
+có gì cần chỉnh sửa, thấy sắp xếp project không đẹp thì mấy ông nói ra nhé
+
+

@@ -1,0 +1,25 @@
+﻿Có 2 thư mục
+
+ElasticModel: chưa cái file setting/model đến elastic
+
+View: chứa 2 forms để hiện thị thông tin
+
+ConsoleForm là test
+
+ElasticSetting -> setting kết nối đến elastic
+File.cs -> Model
+FileDAO -> các truy vấn tới DAO
+
+Tóm tắt sơ sơ thì như mô hình MVC
+	Ở Forms sẽ gọi tới FileDAO
+	FileDAO chứa các truy vấn
+
+Form1 sẽ tìm các file trong máy, còn Form2 sẽ thao tác trên elastic
+
+File.cs tui sửa lại 1 chút về tên nhé
+id là mã số thôi
+path là url như ông Lộc làm ở project ElasticSearch2 ông gửi ý (e.g: "C:\\abc\\xyz\\text.txt")
+name là tên file (e.g: text)
+extension là đuôi của file (e.g: .txt)
+datecreate là ngày tạo, theo định dạng MMddyyyy
+content là nội dụng file -> còn thử nghiệm 1 chút

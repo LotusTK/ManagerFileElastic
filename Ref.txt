@@ -1,0 +1,8 @@
+﻿Project mẫu CRUD trên Winforms, kết nối đến Elastic (đã outdate)
+https://www.codeproject.com/Articles/1033116/A-Beginners-Tutorial-for-Understanding-and-Imple-3
+
+Document configuration connect .NET 7.x
+https://www.elastic.co/guide/en/elasticsearch/client/net-api/current/configuration-options.html
+
+Mapping Attribute
+https://www.elastic.co/guide/en/elasticsearch/client/net-api/current/attribute-mapping.html
