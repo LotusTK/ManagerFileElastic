@@ -68,6 +68,7 @@
     <Compile Include="ElasticModel\ElasticSetting.cs" />
     <Compile Include="ElasticModel\File.cs" />
     <Compile Include="ElasticModel\FileDAO.cs" />
+    <Compile Include="ElasticModel\ModelState.cs" />
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
