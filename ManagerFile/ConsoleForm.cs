@@ -33,7 +33,8 @@ namespace ManagerFile
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            File f = new File() {
+            File f = new File()
+            {
                 Name = "Test",
                 Path = "test1/test2/test3",
                 DateCreate = DateTime.UtcNow,
@@ -45,10 +46,11 @@ namespace ManagerFile
             txtConsole.Text = response.ToString();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private async void btnDelete_ClickAsync(object sender, EventArgs e)
         {
             //id là hashCode
             //var response = dao.Delete()
+            var response = await dao.Delete("7fe1a332-4981-4804-9dee-17db8bc50561");
         }
 
         private void btnFind_Click(object sender, EventArgs e)
@@ -57,6 +59,12 @@ namespace ManagerFile
             txtConsole.Text = response.ToString();
             var response2 = dao.SearchByField("Content", "Sóng gió cuộc đời");
             txtConsole.Text = response2.ToString();
+        }
+
+        private async void btnEdit_ClickAsync(object sender, EventArgs e)
+        {
+            File myFileTest = new File { Id = "7fe1a332-4981-4804-9dee-17db8bc50561", Content = "Test edit" };
+            var response2 = await dao.Edit(myFileTest.Id, myFileTest);
         }
     }
 }

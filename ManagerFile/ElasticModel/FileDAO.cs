@@ -61,37 +61,48 @@ namespace ManagerFile.ElasticModel
             return null;
         }
 
+        public bool CheckResponse(Nest.IResponse response)
+        {
+            if ((response.ApiCall.HttpStatusCode == 201 || response.ApiCall.HttpStatusCode == 200) && response.ApiCall.Success == true)
+            {
+                return true;
+            }
+            return false;
+        }
+
         //add new
-        public Nest.IndexResponse Create(File file)
+        public bool Create(File file)
         {
             file.Id = Guid.NewGuid().ToString();
             var response = connect.client.Index<File>(file, i => i
                        .Index("manager_files")
                        .Id(file.Id)
                        .Refresh(Elasticsearch.Net.Refresh.True));
-            return response;
+            return CheckResponse(response);
         }
 
         //
-        public async Task<Nest.DeleteResponse> Delete(string id, File file)
+        public async Task<bool> Delete(string id)
         {
             var response = await connect.client.DeleteAsync<File>(id, i => i
                 .Index("manager_files")
                 .Refresh(Elasticsearch.Net.Refresh.True));
-            return response;
+            var abc = 1;
+            return CheckResponse(response);
         }
 
         //update
-        public async Task<Nest.UpdateResponse<File>> Edit(string id, File file)
+        public async Task<bool> Edit(string id, File file)
         {
             var response = await connect.client.UpdateAsync<File>(file, i => i
                        .Index("manager_files")
                        .Doc(file)
                        .Refresh(Elasticsearch.Net.Refresh.True));
-            return response;
+            var abc = 2;
+            return CheckResponse(response);
         }
 
-        //search
+        //search all
         public async Task<Nest.ISearchResponse<File>> Find(string SearchString)
         {
             var response = await connect.client.SearchAsync<File>(e => e
